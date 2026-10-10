@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_ilaclar"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="İlaçlarım" />
+    <item
+        android:id="@+id/navigation_takvim"
+        android:icon="@android:drawable/ic_menu_today"
+        android:title="İlaç Takvimi" />
+    <item
+        android:id="@+id/navigation_gecmis"
+        android:icon="@android:drawable/ic_menu_recent_history"
+        android:title="Kullanım Geçmişi" />
+</menu>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingVertical="4dp">
+
+    <FrameLayout
+        android:id="@+id/layoutSelectionBg"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/bg_selected_day_ring"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvGunSayisi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#212121"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="29" />
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/viewStatusDot"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/bg_dot_green"
+        android:visibility="visible" />
+
+</LinearLayout>

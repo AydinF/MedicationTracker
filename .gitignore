@@ -1,0 +1,29 @@
+# Gradle files
+.gradle/
+build/
+**/build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Android Studio / IntelliJ IDEA files
+.idea/
+*.iml
+*.iws
+*.ipr
+*.bak
+
+# Log files
+*.log
+
+# Android profiling / captures
+captures/
+.externalNativeBuild
+.cxx
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary test images
+parol_kutusu.jpg
