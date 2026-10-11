@@ -22,6 +22,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "IlacTakipMobil"
+rootProject.name = "MedicationTracker"
 include(":app")
  

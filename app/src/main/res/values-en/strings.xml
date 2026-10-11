@@ -1,0 +1,98 @@
+<resources>
+    <string name="app_name">Medication Tracker</string>
+    <string name="tab_ilaclarim">My Medicines</string>
+    <string name="tab_takvim">Calendar</string>
+    <string name="tab_gecmis">Usage History</string>
+    <string name="title_ilaclarim">💊 My Medicines</string>
+    <string name="title_takvim">📅 Medication Calendar</string>
+    <string name="title_gecmis">📜 Usage History</string>
+
+    <string name="ocr_title">📷 Scan Box with Camera (OCR)</string>
+    <string name="btn_camera">📷 Camera</string>
+    <string name="btn_gallery">🖼️ Gallery</string>
+    <string name="hint_medicine_name">Medicine Name (e.g. Parol)</string>
+    <string name="hint_dosage">Dosage (e.g. 500 mg - 1 Tablet)</string>
+    <string name="label_alarm_time">Alarm Time</string>
+    <string name="btn_select_time">⏰ Select Time: %s</string>
+    <string name="label_usage_days">Usage Days</string>
+    <string name="cb_no_date">No End Date (Indefinite Reminder)</string>
+
+    <string name="day_everyday">Everyday</string>
+    <string name="day_mon">Mon</string>
+    <string name="day_tue">Tue</string>
+    <string name="day_wed">Wed</string>
+    <string name="day_thu">Thu</string>
+    <string name="day_fri">Fri</string>
+    <string name="day_sat">Sat</string>
+    <string name="day_sun">Sun</string>
+
+    <string name="prev_month">Previous Month</string>
+    <string name="next_month">Next Month</string>
+    <string name="btn_today">Today</string>
+    <string name="legend_taken">🟢 Taken</string>
+    <string name="legend_skipped">🔴 Skipped / Missed</string>
+    <string name="legend_pending">🟡 Today Pending</string>
+
+    <string name="daily_summary">📊 Daily Usage Summary</string>
+    <string name="summary_taken">🟢 %d Taken</string>
+    <string name="summary_skipped">🔴 %d Skipped / Expired</string>
+    <string name="summary_pending">⏳ %d Pending</string>
+    <string name="summary_scheduled">⏰ %d Scheduled</string>
+    <string name="summary_complete">%%%d Completed (Details ➔)</string>
+    <string name="summary_no_doses">No Scheduled Doses</string>
+
+    <string name="header_planned_doses">📋 %s — Planned Doses</string>
+    <string name="empty_ilaclar">No medicines added yet.</string>
+    <string name="empty_ilaclar_sub">Tap the + button below to add your first medicine.</string>
+    <string name="empty_takvim">📅 No medicines scheduled for %s.</string>
+    <string name="btn_add_to_date">➕ Add Medicine for %s</string>
+
+    <string name="filter_medicine">Filter Medicine:</string>
+    <string name="all_medicines">All Medicines</string>
+    <string name="period_today">Today</string>
+    <string name="period_week">This Week</string>
+    <string name="period_all">All Time</string>
+    <string name="empty_gecmis">📜 No usage records found for the selected filter.</string>
+
+    <string name="btn_add_medicine">➕ Add Medicine</string>
+    <string name="btn_take">✅ Taken</string>
+    <string name="btn_skip">❌ Skipped</string>
+    <string name="btn_snooze">⏰ Snooze</string>
+    <string name="btn_save_medicine">Save Medicine &amp; Set Alarm</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <string name="status_taken">🟢 Taken</string>
+    <string name="status_skipped">🔴 Skipped</string>
+    <string name="status_snoozed">🟡 Snoozed (%s)</string>
+    <string name="status_expired">⚠️ Expired</string>
+    <string name="status_scheduled">⏰ Scheduled</string>
+    <string name="status_pending">⏳ Pending</string>
+
+    <string name="confirm_time">Confirmation Time: %s</string>
+    <string name="skip_time">Skipped Time: %s</string>
+    <string name="retroactive_hint">Unanswered (You can mark retroactively)</string>
+
+    <string name="dosage_prefix">Dosage: %s</string>
+    <string name="planned_prefix">Planned: %s - %s</string>
+    <string name="action_prefix">Action: %s</string>
+    <string name="snoozed_prefix">Snoozed: %s</string>
+    <string name="awaiting_response">Awaiting Response</string>
+
+    <string name="dialog_add_title">Add New Medicine</string>
+    <string name="dialog_add_title_for_date">Add New Medicine (For %s)</string>
+    <string name="title_delete_medicine">Delete Medicine</string>
+    <string name="msg_delete_confirm">Are you sure you want to delete %s?</string>
+    <string name="title_snooze">Snooze Alarm: %s</string>
+    <string name="title_30day_map">🗓️ 30-Day Dose Overview</string>
+
+    <string name="toast_enter_name">Please enter the medicine name.</string>
+    <string name="toast_saved">Medicine saved and alarm set! ⏰ (%s)</string>
+    <string name="toast_deleted">Medicine deleted.</string>
+    <string name="toast_alarm_active">Alarm enabled.</string>
+    <string name="toast_alarm_off">Alarm disabled.</string>
+    <string name="toast_take_success">✅ %s marked as taken.</string>
+    <string name="toast_skip_success">❌ %s marked as skipped.</string>
+    <string name="toast_ocr_success">Medicine box scanned successfully!</string>
+    <string name="toast_ocr_fail">Could not read clear text from photo. Please enter manually.</string>
+</resources>

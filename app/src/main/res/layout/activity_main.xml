@@ -17,7 +17,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="💊 İlaçlarım"
+            app:title="@string/title_ilaclarim"
             app:titleTextColor="@android:color/white" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -67,7 +67,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Henüz eklenmiş bir ilaç yok."
+                    android:text="@string/empty_ilaclar"
                     android:textColor="#757575"
                     android:textSize="16sp" />
 
@@ -75,7 +75,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Aşağıdaki + butonuna basarak ekleyebilirsiniz."
+                    android:text="@string/empty_ilaclar_sub"
                     android:textColor="#9E9E9E"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -97,9 +97,9 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="64dp"
                 android:backgroundTint="#1976D2"
-                android:contentDescription="İlaç Ekle"
+                android:contentDescription="@string/btn_add_medicine"
                 android:elevation="12dp"
-                android:text="➕ İlaç Ekle"
+                android:text="@string/btn_add_medicine"
                 android:textColor="@android:color/white"
                 android:textSize="14sp"
                 app:icon="@android:drawable/ic_input_add"
@@ -152,7 +152,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:background="?attr/selectableItemBackgroundBorderless"
-                                android:contentDescription="Önceki Ay"
+                                android:contentDescription="@string/prev_month"
                                 android:src="@android:drawable/ic_media_previous"
                                 app:tint="#1976D2" />
 
@@ -172,7 +172,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:background="?attr/selectableItemBackgroundBorderless"
-                                android:contentDescription="Sonraki Ay"
+                                android:contentDescription="@string/next_month"
                                 android:src="@android:drawable/ic_media_next"
                                 app:tint="#1976D2" />
 
@@ -182,7 +182,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingHorizontal="6dp"
-                                android:text="Bugün"
+                                android:text="@string/btn_today"
                                 android:textColor="#1976D2"
                                 android:textSize="12sp" />
 
@@ -195,13 +195,13 @@
                             android:layout_marginTop="8dp"
                             android:orientation="horizontal">
 
-                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Pzt" android:textColor="#757575" android:textSize="12sp" android:textStyle="bold"/>
-                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Sal" android:textColor="#757575" android:textSize="12sp" android:textStyle="bold"/>
-                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Çar" android:textColor="#757575" android:textSize="12sp" android:textStyle="bold"/>
-                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Per" android:textColor="#757575" android:textSize="12sp" android:textStyle="bold"/>
-                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Cum" android:textColor="#757575" android:textSize="12sp" android:textStyle="bold"/>
-                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Cmt" android:textColor="#1976D2" android:textSize="12sp" android:textStyle="bold"/>
-                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Paz" android:textColor="#D32F2F" android:textSize="12sp" android:textStyle="bold"/>
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="@string/day_mon" android:textColor="#757575" android:textSize="12sp" android:textStyle="bold"/>
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="@string/day_tue" android:textColor="#757575" android:textSize="12sp" android:textStyle="bold"/>
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="@string/day_wed" android:textColor="#757575" android:textSize="12sp" android:textStyle="bold"/>
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="@string/day_thu" android:textColor="#757575" android:textSize="12sp" android:textStyle="bold"/>
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="@string/day_fri" android:textColor="#757575" android:textSize="12sp" android:textStyle="bold"/>
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="@string/day_sat" android:textColor="#1976D2" android:textSize="12sp" android:textStyle="bold"/>
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="@string/day_sun" android:textColor="#D32F2F" android:textSize="12sp" android:textStyle="bold"/>
 
                         </LinearLayout>
 
@@ -224,7 +224,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="🟢 Alındı  "
+                                android:text="@string/legend_taken"
                                 android:textColor="#2E7D32"
                                 android:textSize="11sp"
                                 android:textStyle="bold" />
@@ -232,7 +232,8 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="🔴 Atlandı/Yanıtsız  "
+                                android:layout_marginStart="12dp"
+                                android:text="@string/legend_skipped"
                                 android:textColor="#C62828"
                                 android:textSize="11sp"
                                 android:textStyle="bold" />
@@ -240,7 +241,8 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="🟡 Bugün Bekliyor"
+                                android:layout_marginStart="12dp"
+                                android:text="@string/legend_pending"
                                 android:textColor="#EF6C00"
                                 android:textSize="11sp"
                                 android:textStyle="bold" />
@@ -280,7 +282,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="📊 Günlük Kullanım Özeti"
+                                android:text="@string/daily_summary"
                                 android:textColor="#212121"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
@@ -369,9 +371,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="📅 Seçilen gün için planlanmış bir ilaç bulunmuyor."
                         android:textColor="#757575"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        tools:text="📅 Seçilen gün için planlanmış bir ilaç bulunmuyor." />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnBuTariheIlacEkle"
@@ -379,10 +381,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="➕ Bu Tarihe İlaç Ekle"
                         android:textColor="#1976D2"
                         android:textSize="13sp"
-                        app:strokeColor="#1976D2" />
+                        app:strokeColor="#1976D2"
+                        tools:text="➕ Bu Tarihe İlaç Ekle" />
 
                 </LinearLayout>
 
@@ -430,7 +432,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="İlaç Filtre:"
+                            android:text="@string/filter_medicine"
                             android:textColor="#212121"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -457,7 +459,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Bugün"
+                            android:text="@string/period_today"
                             android:textSize="12sp" />
 
                         <com.google.android.material.button.MaterialButton
@@ -466,7 +468,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Bu Hafta"
+                            android:text="@string/period_week"
                             android:textSize="12sp" />
 
                         <com.google.android.material.button.MaterialButton
@@ -475,7 +477,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Tüm Zamanlar"
+                            android:text="@string/period_all"
                             android:textSize="12sp" />
 
                     </com.google.android.material.button.MaterialButtonToggleGroup>
@@ -490,7 +492,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:gravity="center"
-                android:text="📜 Belirtilen filtreye uygun kullanım kaydı bulunamadı."
+                android:text="@string/empty_gecmis"
                 android:textColor="#757575"
                 android:textSize="15sp"
                 android:visibility="gone" />

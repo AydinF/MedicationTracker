@@ -40,6 +40,7 @@ import com.ilactakipmobil.app.db.DozKaydiEntity
 import com.ilactakipmobil.app.model.Ilac
 import com.ilactakipmobil.app.model.TakvimGunModel
 import com.ilactakipmobil.app.ocr.OcrHelper
+import com.ilactakipmobil.app.util.LocaleHelper
 import kotlinx.coroutines.launch
 import java.io.File
 import java.text.SimpleDateFormat
@@ -205,6 +206,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(LocaleHelper.applyLanguage(newBase))
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -219,6 +224,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        setupToolbarLanguageMenu()
         izinleriKontrolEt()
         setupRecyclerViews()
         setupBottomNavigation()
@@ -233,6 +239,33 @@ class MainActivity : AppCompatActivity() {
         ilaclariYereldenYukle()
         ilaclariSunucudanSenkronizeEt()
         binding.bottomNavigationView.selectedItemId = R.id.navigation_ilaclar
+    }
+
+    private fun setupToolbarLanguageMenu() {
+        binding.toolbar.inflateMenu(R.menu.main_toolbar_menu)
+        guncelleToolbarDilMenuMetni()
+
+        binding.toolbar.setOnMenuItemClickListener { item ->
+            if (item.itemId == R.id.action_toggle_lang) {
+                val currentLang = LocaleHelper.getLanguage(this)
+                val newLang = if (currentLang == "tr") "en" else "tr"
+                LocaleHelper.setLanguage(this, newLang)
+                recreate()
+                true
+            } else {
+                false
+            }
+        }
+    }
+
+    private fun guncelleToolbarDilMenuMetni() {
+        val currentLang = LocaleHelper.getLanguage(this)
+        val menuItem = binding.toolbar.menu.findItem(R.id.action_toggle_lang)
+        if (currentLang == "en") {
+            menuItem?.title = "🇬🇧 EN (🇹🇷 TR)"
+        } else {
+            menuItem?.title = "🇹🇷 TR (🇬🇧 EN)"
+        }
     }
 
     override fun onResume() {
@@ -317,7 +350,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_ilaclar -> {
-                    binding.toolbar.title = "💊 İlaçlarım"
+                    binding.toolbar.title = getString(R.string.title_ilaclarim)
                     binding.layoutIlaclarContainer.visibility = View.VISIBLE
                     binding.layoutTakvimContainer.visibility = View.GONE
                     binding.layoutGecmisContainer.visibility = View.GONE
@@ -325,7 +358,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.navigation_takvim -> {
-                    binding.toolbar.title = "📅 İlaç Takvimi"
+                    binding.toolbar.title = getString(R.string.title_takvim)
                     binding.layoutIlaclarContainer.visibility = View.GONE
                     binding.layoutTakvimContainer.visibility = View.VISIBLE
                     binding.layoutGecmisContainer.visibility = View.GONE
@@ -333,7 +366,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.navigation_gecmis -> {
-                    binding.toolbar.title = "📜 Kullanım Geçmişi"
+                    binding.toolbar.title = getString(R.string.title_gecmis)
                     binding.layoutIlaclarContainer.visibility = View.GONE
                     binding.layoutTakvimContainer.visibility = View.GONE
                     binding.layoutGecmisContainer.visibility = View.VISIBLE
@@ -590,7 +623,7 @@ class MainActivity : AppCompatActivity() {
             val baslikFormat = SimpleDateFormat("dd MMMM yyyy, EEEE", Locale.getDefault())
             val baslikTarihMetin = baslikFormat.format(secilenTakvimCalendar.time)
 
-            binding.tvTakvimBaslik.text = "📋 $baslikTarihMetin — Planlanan Dozlar"
+            binding.tvTakvimBaslik.text = getString(R.string.header_planned_doses, baslikTarihMetin)
 
             val dozlar = repository.getDozlarForDate(tarihStr)
 
@@ -605,13 +638,13 @@ class MainActivity : AppCompatActivity() {
             val bekleyenSayisi = dozlar.count { !isGecmisTarih && (it.durum == DozKaydiEntity.DURUM_BEKLIYOR || it.durum == DozKaydiEntity.DURUM_ERTELENDI) }
             val toplamDoz = dozlar.size
 
-            binding.tvOzetAlinan.text = "🟢 $alinanSayisi Alındı"
-            binding.tvOzetAtlanan.text = "🔴 $atlananSayisi Atlandı / Süresi Geçti"
-            binding.tvOzetBekleyen.text = if (isGelecekTarih) "⏰ $bekleyenSayisi Planlandı" else "⏳ $bekleyenSayisi Bekliyor"
+            binding.tvOzetAlinan.text = getString(R.string.summary_taken, alinanSayisi)
+            binding.tvOzetAtlanan.text = getString(R.string.summary_skipped, atlananSayisi)
+            binding.tvOzetBekleyen.text = if (isGelecekTarih) getString(R.string.summary_scheduled, bekleyenSayisi) else getString(R.string.summary_pending, bekleyenSayisi)
 
             if (toplamDoz > 0) {
                 val oran = (alinanSayisi * 100) / toplamDoz
-                binding.tvOzetDurumRozet.text = "%$oran Tamamlandı (Detay ➔)"
+                binding.tvOzetDurumRozet.text = getString(R.string.summary_complete, oran)
                 if (oran == 100) {
                     binding.tvOzetDurumRozet.setBackgroundColor(Color.parseColor("#E8F5E9"))
                     binding.tvOzetDurumRozet.setTextColor(Color.parseColor("#2E7D32"))
@@ -623,7 +656,7 @@ class MainActivity : AppCompatActivity() {
                     binding.tvOzetDurumRozet.setTextColor(Color.parseColor("#EF6C00"))
                 }
             } else {
-                binding.tvOzetDurumRozet.text = "Planlanmış Doz Yok"
+                binding.tvOzetDurumRozet.text = getString(R.string.summary_no_doses)
                 binding.tvOzetDurumRozet.setBackgroundColor(Color.parseColor("#F5F5F5"))
                 binding.tvOzetDurumRozet.setTextColor(Color.parseColor("#757575"))
             }
@@ -631,8 +664,8 @@ class MainActivity : AppCompatActivity() {
             val tarihKisaMetin = SimpleDateFormat("dd MMMM", Locale.getDefault()).format(secilenTakvimCalendar.time)
             if (dozlar.isEmpty()) {
                 binding.layoutTakvimBosContainer.visibility = View.VISIBLE
-                binding.tvTakvimBos.text = "📅 $tarihKisaMetin tarihinde henüz planlanmış bir ilaç bulunmuyor."
-                binding.btnBuTariheIlacEkle.text = "➕ $tarihKisaMetin Tarihine İlaç Ekle"
+                binding.tvTakvimBos.text = getString(R.string.empty_takvim, tarihKisaMetin)
+                binding.btnBuTariheIlacEkle.text = getString(R.string.btn_add_to_date, tarihKisaMetin)
             } else {
                 binding.layoutTakvimBosContainer.visibility = View.GONE
             }
@@ -747,7 +780,7 @@ class MainActivity : AppCompatActivity() {
     private fun dozuOnayla(doz: DozKaydiEntity, yeniDurum: String) {
         lifecycleScope.launch {
             repository.updateDozDurumu(doz.id, yeniDurum)
-            val mesaj = if (yeniDurum == DozKaydiEntity.DURUM_ALINDI) "✅ ${doz.ilacAdi} alındı olarak kaydedildi." else "❌ ${doz.ilacAdi} atlandı."
+            val mesaj = if (yeniDurum == DozKaydiEntity.DURUM_ALINDI) getString(R.string.toast_take_success, doz.ilacAdi) else getString(R.string.toast_skip_success, doz.ilacAdi)
             Toast.makeText(this@MainActivity, mesaj, Toast.LENGTH_SHORT).show()
             takvimVerileriniYukle()
         }
@@ -758,7 +791,7 @@ class MainActivity : AppCompatActivity() {
         val dakikalar = intArrayOf(10, 15, 30, 60)
 
         MaterialAlertDialogBuilder(this)
-            .setTitle("Alarmı Ertele: ${doz.ilacAdi}")
+            .setTitle(getString(R.string.title_snooze, doz.ilacAdi))
             .setItems(secenekler) { _, which ->
                 val erteleDk = dakikalar[which]
                 val triggerCal = Calendar.getInstance().apply { add(Calendar.MINUTE, erteleDk) }
@@ -770,7 +803,7 @@ class MainActivity : AppCompatActivity() {
                     takvimVerileriniYukle()
                 }
             }
-            .setNegativeButton("İptal", null)
+            .setNegativeButton(getString(R.string.btn_cancel), null)
             .show()
     }
 
@@ -795,7 +828,8 @@ class MainActivity : AppCompatActivity() {
     private fun gecmisFiltreleriniHazirla() {
         lifecycleScope.launch {
             val ilaclar = repository.getTumIlaclarFromDb()
-            val filtreListesi = mutableListOf("Tüm İlaçlar")
+            val tumIlaclarMetin = getString(R.string.all_medicines)
+            val filtreListesi = mutableListOf(tumIlaclarMetin)
             filtreListesi.addAll(ilaclar.map { it.ilacAdi }.distinct())
 
             val spinnerAdapter = ArrayAdapter(

@@ -3,13 +3,13 @@
     <item
         android:id="@+id/navigation_ilaclar"
         android:icon="@android:drawable/ic_menu_agenda"
-        android:title="İlaçlarım" />
+        android:title="@string/tab_ilaclarim" />
     <item
         android:id="@+id/navigation_takvim"
         android:icon="@android:drawable/ic_menu_today"
-        android:title="İlaç Takvimi" />
+        android:title="@string/tab_takvim" />
     <item
         android:id="@+id/navigation_gecmis"
         android:icon="@android:drawable/ic_menu_recent_history"
-        android:title="Kullanım Geçmişi" />
+        android:title="@string/tab_gecmis" />
 </menu>

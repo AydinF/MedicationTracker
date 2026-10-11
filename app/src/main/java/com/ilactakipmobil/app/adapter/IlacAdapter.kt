@@ -21,9 +21,11 @@ class IlacAdapter(
 
     override fun onBindViewHolder(holder: IlacViewHolder, position: Int) {
         val ilac = ilaclar[position]
+        val context = holder.itemView.context
         with(holder.binding) {
             tvIlacAdi.text = ilac.ilacAdi
-            val gunlerText = if (ilac.gunler.isNotEmpty()) " (${ilac.gunler.joinToString(", ")})" else ""
+            val gunlerYerel = com.ilactakipmobil.app.util.LocaleHelper.formatGunlerToCurrentLocale(ilac.gunler, context)
+            val gunlerText = if (gunlerYerel.isNotEmpty()) " ($gunlerYerel)" else ""
             tvDozaj.text = "${ilac.dozaj}$gunlerText"
             tvSaat.text = "⏰ ${ilac.saat}"
 

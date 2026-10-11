@@ -1,3 +1,98 @@
 <resources>
-    <string name="app_name">IlacTakipMobil</string>
+    <string name="app_name">İlaç Takip Mobil</string>
+    <string name="tab_ilaclarim">İlaçlarım</string>
+    <string name="tab_takvim">İlaç Takvimi</string>
+    <string name="tab_gecmis">Kullanım Geçmişi</string>
+    <string name="title_ilaclarim">💊 İlaçlarım</string>
+    <string name="title_takvim">📅 İlaç Takvimi</string>
+    <string name="title_gecmis">📜 Kullanım Geçmişi</string>
+
+    <string name="ocr_title">📷 İlaç Kutusunu Kamerayla Tara (OCR)</string>
+    <string name="btn_camera">📷 Kamera</string>
+    <string name="btn_gallery">🖼️ Galeri</string>
+    <string name="hint_medicine_name">İlaç Adı (Örn: Parol)</string>
+    <string name="hint_dosage">Dozaj (Örn: 500 mg - 1 Tablet)</string>
+    <string name="label_alarm_time">Alarm Saati</string>
+    <string name="btn_select_time">⏰ Saat Seç: %s</string>
+    <string name="label_usage_days">Kullanım Günleri</string>
+    <string name="cb_no_date">Tarih Ekleme (Sürekli/Süresiz Hatırlatma)</string>
+
+    <string name="day_everyday">Her Gün</string>
+    <string name="day_mon">Pzt</string>
+    <string name="day_tue">Sal</string>
+    <string name="day_wed">Çar</string>
+    <string name="day_thu">Per</string>
+    <string name="day_fri">Cum</string>
+    <string name="day_sat">Cmt</string>
+    <string name="day_sun">Paz</string>
+
+    <string name="prev_month">Önceki Ay</string>
+    <string name="next_month">Sonraki Ay</string>
+    <string name="btn_today">Bugün</string>
+    <string name="legend_taken">🟢 Alındı</string>
+    <string name="legend_skipped">🔴 Atlandı / Kaçırıldı</string>
+    <string name="legend_pending">🟡 Bugün Bekliyor</string>
+
+    <string name="daily_summary">📊 Günlük Kullanım Özeti</string>
+    <string name="summary_taken">🟢 %d Alındı</string>
+    <string name="summary_skipped">🔴 %d Atlandı / Süresi Geçti</string>
+    <string name="summary_pending">⏳ %d Bekliyor</string>
+    <string name="summary_scheduled">⏰ %d Planlandı</string>
+    <string name="summary_complete">%%%d Tamamlandı (Detay ➔)</string>
+    <string name="summary_no_doses">Planlanmış Doz Yok</string>
+
+    <string name="header_planned_doses">📋 %s — Planlanan Dozlar</string>
+    <string name="empty_ilaclar">Henüz eklenmiş bir ilaç yok.</string>
+    <string name="empty_ilaclar_sub">Aşağıdaki + butonuna basarak ekleyebilirsiniz.</string>
+    <string name="empty_takvim">📅 %s tarihinde henüz planlanmış bir ilaç bulunmuyor.</string>
+    <string name="btn_add_to_date">➕ %s Tarihine İlaç Ekle</string>
+
+    <string name="filter_medicine">İlaç Filtre:</string>
+    <string name="all_medicines">Tüm İlaçlar</string>
+    <string name="period_today">Bugün</string>
+    <string name="period_week">Bu Hafta</string>
+    <string name="period_all">Tüm Zamanlar</string>
+    <string name="empty_gecmis">📜 Belirtilen filtreye uygun kullanım kaydı bulunamadı.</string>
+
+    <string name="btn_add_medicine">➕ İlaç Ekle</string>
+    <string name="btn_take">✅ Aldım</string>
+    <string name="btn_skip">❌ Atladım</string>
+    <string name="btn_snooze">⏰ Ertele</string>
+    <string name="btn_save_medicine">İlacı Kaydet &amp; Alarmı Kur</string>
+    <string name="btn_delete">Sil</string>
+    <string name="btn_cancel">İptal</string>
+
+    <string name="status_taken">🟢 Aldım</string>
+    <string name="status_skipped">🔴 Atladım</string>
+    <string name="status_snoozed">🟡 Ertelendi (%s)</string>
+    <string name="status_expired">⚠️ Süresi Geçti</string>
+    <string name="status_scheduled">⏰ Planlandı</string>
+    <string name="status_pending">⏳ Bekliyor</string>
+
+    <string name="confirm_time">Onay Saati: %s</string>
+    <string name="skip_time">Atlama Saati: %s</string>
+    <string name="retroactive_hint">Yanıt verilmedi (Geriye dönük işaretleyebilirsiniz)</string>
+
+    <string name="dosage_prefix">Dozaj: %s</string>
+    <string name="planned_prefix">Planlanan: %s - %s</string>
+    <string name="action_prefix">İşlem: %s</string>
+    <string name="snoozed_prefix">Ertelendi: %s</string>
+    <string name="awaiting_response">Yanıt Bekleniyor</string>
+
+    <string name="dialog_add_title">Yeni İlaç Ekle</string>
+    <string name="dialog_add_title_for_date">Yeni İlaç Ekle (%s İçin)</string>
+    <string name="title_delete_medicine">İlacı Sil</string>
+    <string name="msg_delete_confirm">%s ilacını silmek istediğinize emin misiniz?</string>
+    <string name="title_snooze">Alarmı Ertele: %s</string>
+    <string name="title_30day_map">🗓️ Son 30 Günün Doz Haritası</string>
+
+    <string name="toast_enter_name">Lütfen ilaç adını girin.</string>
+    <string name="toast_saved">İlaç kaydedildi ve alarm kuruldu! ⏰ (%s)</string>
+    <string name="toast_deleted">İlaç silindi.</string>
+    <string name="toast_alarm_active">Alarm aktifleşti.</string>
+    <string name="toast_alarm_off">Alarm kapatıldı.</string>
+    <string name="toast_take_success">✅ %s alındı olarak kaydedildi.</string>
+    <string name="toast_skip_success">❌ %s atlandı.</string>
+    <string name="toast_ocr_success">İlaç kutusu başarıyla tarandı!</string>
+    <string name="toast_ocr_fail">Fotoğrafta net metin okunamadı. Lütfen elle girin.</string>
 </resources>

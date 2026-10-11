@@ -26,7 +26,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="📷 İlaç Kutusunu Kamerayla Tara (OCR)"
+                android:text="@string/ocr_title"
                 android:textColor="#2E7D32"
                 android:textSize="13sp"
                 android:textStyle="bold" />
@@ -45,7 +45,7 @@
                     android:layout_marginEnd="4dp"
                     android:layout_weight="1"
                     android:padding="0dp"
-                    android:text="📷 Kamera"
+                    android:text="@string/btn_camera"
                     android:textSize="12sp" />
 
                 <com.google.android.material.button.MaterialButton
@@ -56,7 +56,7 @@
                     android:layout_marginStart="4dp"
                     android:layout_weight="1"
                     android:padding="0dp"
-                    android:text="🖼️ Galeri"
+                    android:text="@string/btn_gallery"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -86,7 +86,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="İlaç Adı (Örn: Parol)">
+        android:hint="@string/hint_medicine_name">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etIlacAdi"
@@ -100,7 +100,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:hint="Dozaj (Örn: 500 mg - 1 Tablet)">
+        android:hint="@string/hint_dosage">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etDozaj"
@@ -114,7 +114,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Alarm Saati"
+        android:text="@string/label_alarm_time"
         android:textColor="#212121"
         android:textSize="14sp"
         android:textStyle="bold" />
@@ -133,7 +133,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Kullanım Günleri"
+        android:text="@string/label_usage_days"
         android:textColor="#212121"
         android:textSize="14sp"
         android:textStyle="bold" />
@@ -151,56 +151,56 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Her Gün" />
+            android:text="@string/day_everyday" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipPzt"
             style="@style/Widget.Material3.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pzt" />
+            android:text="@string/day_mon" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSal"
             style="@style/Widget.Material3.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sal" />
+            android:text="@string/day_tue" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipCar"
             style="@style/Widget.Material3.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Çar" />
+            android:text="@string/day_wed" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipPer"
             style="@style/Widget.Material3.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Per" />
+            android:text="@string/day_thu" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipCum"
             style="@style/Widget.Material3.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cum" />
+            android:text="@string/day_fri" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipCmt"
             style="@style/Widget.Material3.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cmt" />
+            android:text="@string/day_sat" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipPaz"
             style="@style/Widget.Material3.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Paz" />
+            android:text="@string/day_sun" />
 
     </com.google.android.material.chip.ChipGroup>
 
@@ -210,7 +210,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:checked="true"
-        android:text="Tarih Ekleme (Sürekli/Süresiz Hatırlatma)"
+        android:text="@string/cb_no_date"
         android:textColor="#616161"
         android:textSize="13sp" />
 

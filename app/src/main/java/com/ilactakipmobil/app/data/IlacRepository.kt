@@ -363,7 +363,7 @@ class IlacRepository(context: Context) {
         baslangicTarih: String,
         bitisTarih: String
     ): List<DozKaydiEntity> = withContext(Dispatchers.IO) {
-        if (ilacAdiFiltre.isNullOrEmpty() || ilacAdiFiltre == "Tüm İlaçlar") {
+        if (ilacAdiFiltre.isNullOrEmpty() || ilacAdiFiltre == "Tüm İlaçlar" || ilacAdiFiltre == "All Medicines") {
             return@withContext dozKaydiDao.getDozlarByTarihAraligi(baslangicTarih, bitisTarih)
         } else {
             return@withContext dozKaydiDao.getDozlarByIlacAndTarihAraligi(ilacAdiFiltre, baslangicTarih, bitisTarih)
