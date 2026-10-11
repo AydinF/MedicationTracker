@@ -1,14 +1,32 @@
 # 💊 Medication Tracker (İlaç Takip Mobil)
 
-![Android](https://img.shields.io/badge/Android-Native-green?logo=android)
-![Kotlin](https://img.shields.io/badge/Kotlin-2.0+-purple?logo=kotlin)
-![Language](https://img.shields.io/badge/Language-TR%20%7C%20EN-blue)
-![Architecture](https://img.shields.io/badge/Architecture-MVVM%20%2B%20Repository-blue)
-![Database](https://img.shields.io/badge/Database-Room%20SQLite-orange)
-![AI/ML](https://img.shields.io/badge/AI-Google%20ML%20Kit%20OCR-yellow)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
+![Google ML Kit](https://img.shields.io/badge/Google%20ML%20Kit-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+![Gradle](https://img.shields.io/badge/Gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white)
 
-**Medication Tracker (İlaç Takip Mobil)**, kullanıcıların günlük ilaçlarını düzenli olarak takip etmelerini, kamera ile ilaç kutularını tarayarak otomatik bilgi doldurmalarını, sesli ve ertelemeli alarmlarla dozlarını kaçırmamalarını sağlayan ve **🇹🇷 Türkçe & 🇬🇧 İngilizce** çift dil desteği sunan modern bir Android uygulamasıdır.
+---
+
+## 🚀 Featured Project Card
+
+<table>
+<tr>
+<td width="100%">
+
+**💊 [Medication Tracker](https://github.com/cem-oral/MedicationTracker)** — *Android & AI App*
+
+A native Android application built with Kotlin and Jetpack architecture that enables users to track daily medications, scan medicine boxes using AI-powered OCR, and receive exact-time reminders.
+
+- 📷 On-Device ML Pipeline using **Google ML Kit Text Recognition** for automatic medicine box scanning (brand, dosage, quantity)
+- 📅 Custom 7-column in-app month calendar with pre-calculated visual status indicators (**🟢 Taken, 🔴 Missed, 🟡 Pending**)
+- ⏰ Precise alarm engine with **AlarmManager (setAlarmClock)** & direct notification actions (**Take, Skip, 10-Min Snooze**)
+- 🌐 Multi-language architecture with instant **🇹🇷 Turkish & 🇬🇧 English** live switcher
+- 🗄️ Offline-first storage powered by **Room SQLite Database** with automated data migration
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -89,27 +107,5 @@
 
 ---
 
-## 📱 UI Layout / Arayüz Düzeni
-
-```
-+--------------------------+  +--------------------------+  +--------------------------+
-| 💊 My Medicines  [🇹🇷/🇬🇧] |  | 📅 Calendar      [🇹🇷/🇬🇧] |  | 📜 Usage History [🇹🇷/🇬🇧] |
-|                          |  |                          |  |                          |
-|  Parol 500 mg            |  |  ◀   October 2026   ▶    |  |  Filter: [All Medicines▾]|
-|  ⏰ 09:50 (Everyday) [ON]|  |  Mon Tue Wed Thu Fri Sat |  |  [Today] [Week] [All]    |
-|                          |  |   1   2   3   4   5  🟢  |  |                          |
-|                          |  |   7   8  🔴  10  11  12  |  |  Parol 500 mg            |
-|                          |  |  13  14  15  16  17  18  |  |  Planned: 09:50          |
-|  [➕ Add Medicine]       |  |                          |  |  Action: ✅ Taken (09:52)|
-+--------------------------+  +--------------------------+  +--------------------------+
-```
-
----
-
 ## 🔐 Security & Privacy / Güvenlik ve Gizlilik
 Uygulama taranan ilaç kutusu fotoğraflarını hiçbir harici sunucuya göndermez. Tüm OCR İşlemleri tamamen cihaz üzerinde (On-Device ML Kit) gerçekleşir.
-
----
-
-## 📄 License / Lisans
-Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır.
