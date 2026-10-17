@@ -109,4 +109,5 @@
     <string name="toast_permission_required">Microphone permission is required!</string>
     <string name="toast_recording_started">Recording started...</string>
     <string name="toast_recording_stopped">Recording stopped.</string>
+    <string name="toast_record_required">⚠️ You must record your custom sound before adding medicine and setting alarms!</string>
 </resources>

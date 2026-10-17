@@ -109,4 +109,5 @@
     <string name="toast_permission_required">Mikrofon izni gereklidir!</string>
     <string name="toast_recording_started">Kayıt başlatıldı...</string>
     <string name="toast_recording_stopped">Kayıt durduruldu.</string>
+    <string name="toast_record_required">⚠️ İlaç eklemek ve alarm kurmak için önce kendi sesinizi kaydetmelisiniz!</string>
 </resources>

@@ -245,7 +245,7 @@ class MainActivity : AppCompatActivity() {
         setupGecmisControls()
 
         binding.fabEkle.setOnClickListener {
-            yeniIlacEkleDialogGoster()
+            yeniIlacEkleKontrolluGoster()
         }
 
         // Başlangıç verilerini yükle ve varsayılan olarak İlaçlarım sekmesini aç
@@ -280,19 +280,28 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun getCustomSoundFile(): File? {
+        val m4a = File(filesDir, "custom_alarm_sound.m4a")
+        if (m4a.exists() && m4a.length() > 0) return m4a
+        val g3p = File(filesDir, "custom_alarm_sound.3gp")
+        if (g3p.exists() && g3p.length() > 0) return g3p
+        return null
+    }
+
     private fun gosterSesKayitDialogu() {
         val dialogBinding = DialogAudioRecorderBinding.inflate(layoutInflater)
         val dialog = MaterialAlertDialogBuilder(this)
             .setView(dialogBinding.root)
             .create()
 
-        val customFile = File(filesDir, "custom_alarm_sound.3gp")
+        val customFile = File(filesDir, "custom_alarm_sound.m4a")
+        val existingFile = getCustomSoundFile() ?: customFile
         val prefs = getSharedPreferences("ilac_takip_prefs", Context.MODE_PRIVATE)
         val useCustom = prefs.getBoolean("key_use_custom_sound", false)
 
-        dialogBinding.switchOzelSesKullan.isChecked = useCustom && customFile.exists()
+        dialogBinding.switchOzelSesKullan.isChecked = useCustom && existingFile.exists()
 
-        if (customFile.exists()) {
+        if (existingFile.exists()) {
             dialogBinding.tvKayitDurumu.text = getString(R.string.status_recorded)
             dialogBinding.btnSesiDinle.isEnabled = true
         } else {
@@ -315,8 +324,8 @@ class MainActivity : AppCompatActivity() {
                     MediaRecorder()
                 }.apply {
                     setAudioSource(MediaRecorder.AudioSource.MIC)
-                    setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP)
-                    setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB)
+                    setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
+                    setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
                     setOutputFile(customFile.absolutePath)
                     prepare()
                     start()
@@ -341,10 +350,15 @@ class MainActivity : AppCompatActivity() {
                 }
                 mediaRecorder = null
 
+                val hasData = customFile.exists() && customFile.length() > 0
+                if (!hasData) {
+                    Toast.makeText(this, "⚠️ Uyarı: Kayıt dosyası boş (0 bayt). Emülatör mikrofonu kapalı olabilir!", Toast.LENGTH_LONG).show()
+                }
+
                 dialogBinding.tvKayitDurumu.text = getString(R.string.status_recorded)
                 dialogBinding.btnKaydiBaslat.isEnabled = true
                 dialogBinding.btnKaydiDurdur.isEnabled = false
-                dialogBinding.btnSesiDinle.isEnabled = customFile.exists()
+                dialogBinding.btnSesiDinle.isEnabled = hasData
                 Toast.makeText(this, getString(R.string.toast_recording_stopped), Toast.LENGTH_SHORT).show()
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -354,9 +368,8 @@ class MainActivity : AppCompatActivity() {
         dialogBinding.btnSesiDinle.setOnClickListener {
             try {
                 mediaPlayer?.release()
-                mediaPlayer = MediaPlayer().apply {
-                    setDataSource(customFile.absolutePath)
-                    prepare()
+                val currentFile = getCustomSoundFile() ?: customFile
+                mediaPlayer = MediaPlayer.create(this, Uri.fromFile(currentFile))?.apply {
                     start()
                 }
             } catch (e: Exception) {
@@ -558,6 +571,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun yeniIlacEkleKontrolluGoster(hedefCalendar: Calendar? = null) {
+        yeniIlacEkleDialogGoster(hedefCalendar)
+    }
+
     private fun yeniIlacEkleDialogGoster(hedefCalendar: Calendar? = null) {
         val dialogBinding = DialogAddIlacBinding.inflate(layoutInflater)
         ocrTargetDialogBinding = dialogBinding
@@ -756,7 +773,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnBuTariheIlacEkle.setOnClickListener {
-            yeniIlacEkleDialogGoster(secilenTakvimCalendar)
+            yeniIlacEkleKontrolluGoster(secilenTakvimCalendar)
         }
     }
 

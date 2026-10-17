@@ -83,7 +83,7 @@ class AlarmReceiver : BroadcastReceiver() {
             }
         }
 
-        val channelId = "ILAC_ALARM_CHANNEL_ID"
+        val channelId = "ILAC_ALARM_CHANNEL_STANDARD"
         val alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
             ?: RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
 
